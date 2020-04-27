@@ -6,6 +6,21 @@
 #  - n (12, 24...) palabras (jaxx p.e. pide 12)
 #  - Diccionario Ingles. Mas estandar
 #
+
+# partiendo de una semilla o una frase o una privkey. generar direcciones de interes.
+# Utilizar conmutador para testnet
+"""
+semilla
+mnemonico
+seed
+xpriv (m)
+xpub (M)
+P2PK
+P2PKH
+P2SH
+BENCH
+"""
+
 import os # para poder ejecutar comandos de shell
 # <cadena> seed o frase mnemonico
 # <cadena> derivacion
@@ -68,7 +83,6 @@ if args.esquema:
 else: #Testnet
     esquema=BIP44
 
-
 ###############################################
 
 BIP141= "m/0/0"
@@ -78,32 +92,6 @@ BIP44 = "m/44'/0'/0'/0/0"
 BIP44T = "m/44'/1'/0'/0/0"
 BIP32 = "m/0/0"
 
-''' Base para pruebas
-M1_drum_semilla="43974186fa6ec376cf58fa6eb8aaaac2"
-M1_drum_mnemo="drum ring giant visit umbrella rocket dice butter huge shed primary magic"
-M1_drum_seed="a15dd781ae047d1f3ab4a7bc56e5119b566f66c34ad30b16e090e4c35cfefd084df66b73fc1d35822a706d7cc9119deedc4efb4eb36eabb5ae2d4ebccec31a29"
-wif_DerivarP2SH="L2iYpjJ3J7ujwr4oEfbmKeymfQf99MB3VVnL4wmpZcE3sKa3cJPp"
-
-python generaEnEpr.py 43974186fa6ec376cf58fa6eb8aaaac2 -e "m/44'/0'/0'/0/0,2" -d
-python generaEnEpr.py "drum ring giant visit umbrella rocket dice butter huge shed primary magic" -e "m/44'/0'/0'/0/0"
-python generaEnEpr.py a15dd781ae047d1f3ab4a7bc56e5119b566f66c34ad30b16e090e4c35cfefd084df66b73fc1d35822a706d7cc9119deedc4efb4eb36eabb5ae2d4ebccec31a29 -e "m/44'/0'/0'/0/0"
-python generaEnEpr.py -e "" L2iYpjJ3J7ujwr4oEfbmKeymfQf99MB3VVnL4wmpZcE3sKa3cJPp
-
-'''
-
-# partiendo de una semilla o una frase o una privkey. generar direcciones de interes.
-# Utilizar conmutador para testnet
-"""
-semilla
-mnemonico
-seed
-xpriv (m)
-xpub (M)
-P2PK
-P2PKH
-P2SH
-BENCH
-"""
 #direccion = dict{"xprv", "xpub", "ec", "wif", "ec_pub", "address"}
 arbol=dict()
 arbol={'E':"",'mnemonico':"",'contrasena':"",'seed':"",'esquema':"",'m':'', 'M':'','xpriv':[], 'xpub':[], 'pagos':[]}
